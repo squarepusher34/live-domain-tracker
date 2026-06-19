@@ -1,18 +1,37 @@
-async function load() {
-  try {
-    const res = await fetch("/api/new");
-    const data = await res.json();
+async function loadData() {
+  const search = document.getElementById("search").value;
 
-    document.getElementById("list").innerHTML =
-      data.slice(0, 20).map(d =>
-        `<p><b>${d.domain}</b></p>`
-      ).join("");
+  let url = "/";
 
-  } catch (e) {
-    document.getElementById("list").innerHTML =
-      "API not ready yet";
+  if (search) {
+    url += "?query=" + search;
   }
+
+  document.getElementById("status").innerText = "Loading...";
+
+  const res = await fetch(url);
+  const data = await res.json();
+
+  document.getElementById("status").innerText =
+    `Loaded ${data.length} records`;
+
+  const list = document.getElementById("list");
+  list.innerHTML = "";
+
+  data.forEach(item => {
+    const div = document.createElement("div");
+    div.className = "item";
+    div.innerHTML = `
+      <b>${item.domain}</b><br>
+      ${item.issuer}<br>
+      <small>${item.time}</small>
+    `;
+    list.appendChild(div);
+  });
 }
 
-load();
-setInterval(load, 10000);
+// auto load
+loadData();
+
+// refresh every 10 sec
+setInterval(loadData, 10000);
