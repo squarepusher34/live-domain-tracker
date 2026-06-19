@@ -2,20 +2,70 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Live Domain Tracker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DomainRadar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <h1>Live Domain Tracker</h1>
+  <div class="scanlines"></div>
 
-  <input id="search" placeholder="Search domain..." />
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-icon">&#9670;</span>
+      <span class="brand-text">DOMAIN<span class="brand-accent">RADAR</span></span>
+    </div>
+    <div class="topbar-mid">
+      <span class="live-dot"></span>
+      <span class="live-label">LIVE</span>
+      <span class="topbar-sep">/</span>
+      <span id="clock">00:00:00 UTC</span>
+    </div>
+    <div class="topbar-right">
+      <input id="search" class="search-input" placeholder="filter://domain" autocomplete="off" />
+      <button class="btn-refresh" onclick="loadData()">
+        <span class="btn-refresh-icon">&#10227;</span> SYNC
+      </button>
+    </div>
+  </header>
 
-  <button onclick="loadData()">Refresh</button>
+  <div id="status" class="status-bar">INITIALIZING FEED&hellip;</div>
 
-  <div id="status">Loading...</div>
+  <main class="grid">
 
-  <div id="list"></div>
+    <section class="panel panel-list">
+      <div class="panel-head">
+        <span>CERTIFICATE TRANSPARENCY LOG</span>
+        <span id="count-badge" class="count-badge">0</span>
+      </div>
+      <div id="list" class="log-list"></div>
+    </section>
+
+    <section class="panel panel-globe">
+      <div class="panel-head">
+        <span>GLOBAL ISSUANCE MAP</span>
+        <span class="count-badge ghost" id="rate-badge">0/min</span>
+      </div>
+      <div class="globe-stage">
+        <canvas id="globe"></canvas>
+        <div class="globe-ring r1"></div>
+        <div class="globe-ring r2"></div>
+        <div class="crosshair ch-h"></div>
+        <div class="crosshair ch-v"></div>
+        <div class="coords">LAT 00.0000 / LON 00.0000</div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footbar">
+    <span>SOURCE: young-credit-4727.timurayunlu.workers.dev</span>
+    <span>REFRESH: 60s</span>
+    <span id="total-seen">TRACKED: 0</span>
+  </footer>
 
   <script src="app.js"></script>
 </body>
