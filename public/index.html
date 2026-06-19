@@ -1,14 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Live Domain Tracker</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1>🆕 Live Domains</h1>
-<div id="list">Loading...</div>
+  <h1>Live Domain Tracker</h1>
 
-<script src="app.js"></script>
+  <input id="search" placeholder="Search domain..." />
+
+  <button onclick="loadData()">Refresh</button>
+
+  <div id="status">Loading...</div>
+
+  <div id="list"></div>
+
+  <script src="app.js"></script>
 </body>
 </html>
