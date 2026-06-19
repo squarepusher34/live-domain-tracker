@@ -172,9 +172,9 @@ function pingGlobe() {
     const radius = Math.min(w, h) * 0.32;
 
     const innerGlow = ctx.createRadialGradient(cx, cy, radius * 0.1, cx, cy, radius * 1.05);
-    innerGlow.addColorStop(0, "rgba(0, 230, 245, 0.16)");
-    innerGlow.addColorStop(0.7, "rgba(0, 230, 245, 0.05)");
-    innerGlow.addColorStop(1, "rgba(0, 230, 245, 0)");
+    innerGlow.addColorStop(0, "rgba(57, 255, 140, 0.16)");
+    innerGlow.addColorStop(0.7, "rgba(57, 255, 140, 0.05)");
+    innerGlow.addColorStop(1, "rgba(57, 255, 140, 0)");
     ctx.fillStyle = innerGlow;
     ctx.beginPath();
     ctx.arc(cx, cy, radius * 1.05, 0, Math.PI * 2);
@@ -190,7 +190,7 @@ function pingGlobe() {
         const lon = (j / 72) * 360 - 180;
         const p = project(lat, lon, radius, cx, cy, rotation);
         const alpha = p.z > 0 ? 0.4 : 0.08;
-        ctx.strokeStyle = `rgba(0, 230, 245, ${alpha})`;
+        ctx.strokeStyle = `rgba(57, 255, 140, ${alpha})`;
         if (!started) {
           ctx.moveTo(p.x, p.y);
           started = true;
@@ -209,7 +209,7 @@ function pingGlobe() {
         const lat = (j / 72) * 180 - 90;
         const p = project(lat, lon, radius, cx, cy, rotation);
         const alpha = p.z > 0 ? 0.34 : 0.06;
-        ctx.strokeStyle = `rgba(0, 230, 245, ${alpha})`;
+        ctx.strokeStyle = `rgba(57, 255, 140, ${alpha})`;
         if (!started) {
           ctx.moveTo(p.x, p.y);
           started = true;
@@ -222,7 +222,7 @@ function pingGlobe() {
 
     ctx.beginPath();
     ctx.arc(cx, cy, radius, 0, Math.PI * 2);
-    ctx.strokeStyle = "rgba(0, 230, 245, 0.55)";
+    ctx.strokeStyle = "rgba(57, 255, 140, 0.55)";
     ctx.lineWidth = 1.2;
     ctx.stroke();
 
