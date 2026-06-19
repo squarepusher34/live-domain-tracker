@@ -1,16 +1,16 @@
 :root {
-  --void: #050810;
-  --panel: #0a0f1c;
-  --panel-edge: #131c30;
-  --grid-line: rgba(0, 240, 255, 0.06);
-  --cyan: #00e6f5;
-  --cyan-dim: rgba(0, 230, 245, 0.35);
-  --green: #39ff8c;
-  --green-dim: rgba(57, 255, 140, 0.3);
+  --void: #030604;
+  --panel: #060e08;
+  --panel-edge: #0f2418;
+  --grid-line: rgba(57, 255, 140, 0.05);
+  --cyan: #39ff8c;
+  --cyan-dim: rgba(57, 255, 140, 0.35);
+  --green: #6dffb0;
+  --green-dim: rgba(109, 255, 176, 0.35);
   --amber: #ffb84d;
-  --text: #cfe0f5;
-  --text-dim: #5a6c8c;
-  --text-faint: #2e3a52;
+  --text: #b9ffd2;
+  --text-dim: #3f7a56;
+  --text-faint: #1f4530;
   --font: 'JetBrains Mono', monospace;
 }
 
@@ -47,7 +47,7 @@ body {
     to bottom,
     rgba(0, 0, 0, 0) 0px,
     rgba(0, 0, 0, 0) 2px,
-    rgba(0, 230, 245, 0.012) 3px,
+    rgba(57, 255, 140, 0.012) 3px,
     rgba(0, 0, 0, 0) 4px
   );
   mix-blend-mode: screen;
@@ -144,11 +144,11 @@ body {
 
 .search-input:focus {
   border-color: var(--cyan-dim);
-  box-shadow: 0 0 0 2px rgba(0, 230, 245, 0.08);
+  box-shadow: 0 0 0 2px rgba(57, 255, 140, 0.08);
 }
 
 .btn-refresh {
-  background: rgba(0, 230, 245, 0.08);
+  background: rgba(57, 255, 140, 0.08);
   border: 1px solid var(--cyan-dim);
   color: var(--cyan);
   font-family: var(--font);
@@ -165,8 +165,8 @@ body {
 }
 
 .btn-refresh:hover {
-  background: rgba(0, 230, 245, 0.16);
-  box-shadow: 0 0 16px rgba(0, 230, 245, 0.12);
+  background: rgba(57, 255, 140, 0.16);
+  box-shadow: 0 0 16px rgba(57, 255, 140, 0.12);
 }
 
 .btn-refresh:active {
@@ -222,7 +222,7 @@ body {
 }
 
 .count-badge {
-  background: rgba(0, 230, 245, 0.1);
+  background: rgba(57, 255, 140, 0.1);
   color: var(--cyan);
   font-size: 11px;
   font-weight: 700;
