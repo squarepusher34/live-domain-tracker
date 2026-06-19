@@ -1,16 +1,22 @@
 :root {
-  --void: #030604;
-  --panel: #060e08;
-  --panel-edge: #0f2418;
-  --grid-line: rgba(57, 255, 140, 0.05);
-  --cyan: #39ff8c;
-  --cyan-dim: rgba(57, 255, 140, 0.35);
-  --green: #6dffb0;
-  --green-dim: rgba(109, 255, 176, 0.35);
+  --void: #050204;
+  --panel: #0b0607;
+  --panel-edge: #2a0b10;
+
+  --grid-line: rgba(255, 60, 60, 0.05);
+
+  --cyan: #ff3b3b;
+  --cyan-dim: rgba(255, 59, 59, 0.35);
+
+  --green: #ff2e2e;
+  --green-dim: rgba(255, 46, 46, 0.35);
+
   --amber: #ffb84d;
-  --text: #b9ffd2;
-  --text-dim: #3f7a56;
-  --text-faint: #1f4530;
+
+  --text: #ffd6d6;
+  --text-dim: #a85a5a;
+  --text-faint: #4a1f1f;
+
   --font: 'JetBrains Mono', monospace;
 }
 
